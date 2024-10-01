@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('common/nav') %>
+    <h1 align="center"> Registration</h1>
+    <center>
+        <form action="/newuser" method="post">
+        Email-id<input type="email" name="email" required><br><br>
+        Password<input type="password" name="password" required><br><br>
+        Gender<input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female<br><br>
+        Address<textarea  cols="12"  name="address"></textarea><br><br>
+        <button>Login</button>
+        </form>
+        <br>
+        <a href="/login">Already you have an Account</a> <br><br>
+        <% if(locals.message)
+        {%>
+            <h4 align="center" style="color: brown;"><%= message %></h1>
+      <%}%>
+    </center>
+</body>
+</html>

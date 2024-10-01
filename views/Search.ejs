@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('common/nav')%>
+    <h1 align="center">Search record here</h1>
+    <form action="/search_record" method="post" align="center">
+        Enter your name   <input type="search" required name="name" placeholder="search.."><br><br>
+        <button>find</button>
+    </form>
+ <%if(locals.record)
+ {
+    %>
+ 
+    <table border="3" align="center">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile No</th>
+            <th>Address</th>
+        </tr>
+       
+
+        </thead>
+        <tbody>
+            <%
+            
+            if(record.length>0)
+            {
+                %>
+            
+            <% record.forEach((data)=>{ %>
+                <tr>
+                 <td><%=data.name%></td>
+                 <td><%=data.mobile%></td>
+                 <td><%=data.address%></td>
+                </tr>
+                 
+          <%  }) 
+             } 
+             else
+            {%>
+                <tr>
+                    <td colspan="3">No record</td>
+                </tr>
+          <%  } %>
+        </tbody>
+    </table>
+ <% } %>
+</body>
+</html>
