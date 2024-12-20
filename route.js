@@ -65,3 +65,5 @@ module.exports=router
 //id cannot updated byourseleves
 // db.teacher.findOne({"contact.email":"mamta@gmail.com"}
 // db.teacher.find({"subject taught":["english","hindi"]})
+
+
